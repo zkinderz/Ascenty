@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Integração TI | Ascenty</title>
+  <title data-i18n="page_title"></title>
 
   <!-- Fonte Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,269 +18,296 @@
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <header class="navbar">
-    <div class="logo">
-      <img src="assets/images/logo-ascenty.png" alt="Logo Ascenty">
-    </div>
-    <nav>
-      <a href="#empresa">Empresa</a>
-      <a href="#tecnologia">Tecnologia</a>
-      <a href="#seguranca">Segurança</a>
-      <a href="#equipe">Equipe</a>
-      <a href="#politicas">Políticas</a>
-      <a href="#quiz">Quiz</a>
-    </nav>
-  </header>
-
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <img src="assets/images/datacenter.png" alt="Datacenter Ascenty" class="hero-image">
-      <h1>Bem-vindo à Integração de TI</h1>
-      <p>Conheça nossa cultura, nossas tecnologias, nossa infraestrutura e as pessoas que irão apoiar você em sua jornada.</p>
-      <a href="#empresa" class="btn">Iniciar Jornada</a>
-    </div>
-  </section>
-
-  <!-- EMPRESA -->
-  <section id="empresa" class="section">
-    <h2>Quem Somos</h2>
-    <div class="cards">
-      <a href="https://ascenty1.sharepoint.com/sites/Ascenty2/SitePages/Nossa-Historia.aspx" class="card" target="_blank">
-        <h3>🏢 História</h3>
-        <p>Conheça nossa trajetória e evolução da infraestrutura digital.</p>
-      </a>
-      <a href="https://ascenty1.sharepoint.com/sites/Ascenty2/SitePages/Proposito-e-Missao.aspx" class="card" target="_blank">
-        <h3>🎯 Propósito e Missão</h3>
-        <p>Entregar serviços com excelência e propósito.</p>
-      </a>
-      <a href="https://ascenty1.sharepoint.com/sites/Ascenty2/SitePages/Nossos-Valores.aspx" class="card" target="_blank">
-        <h3>💙 Valores</h3>
-        <p>Ética, colaboração, segurança e compromisso com resultados.</p>
-      </a>
-    </div>
-  </section>
-
-  <!-- NÚMEROS -->
-  <section class="numbers">
-    <h2>Nossa Presença</h2>
-    <div class="numbers-grid">
-      <div><span class="counter" data-target="28">0</span><p>Data Centers</p></div>
-      <div><span class="counter" data-target="1100">0</span><p>Colaboradores</p></div>
-      <div><span class="counter" data-target="750">0</span><p>Clientes</p></div>
-    </div>
-  </section>
-
-  <!-- TECNOLOGIAS -->
-  <section id="tecnologia" class="section">
-    <h2>Tecnologias Utilizadas</h2>
-    <div class="cards">
-      <div class="card" onclick="openModal('azure')"><h3>☁️ Azure</h3><p>Plataforma de nuvem.</p></div>
-      <div class="card" onclick="openModal('vmware')"><h3>🖥️ VMware</h3><p>Virtualização de servidores.</p></div>
-      <div class="card" onclick="openModal('firewall')"><h3>🛡️ Firewall & IDS/IPS</h3><p>Proteção de rede.</p></div>
-      <div class="card" onclick="openModal('servicenow')"><h3>🎫 ServiceNow</h3><p>Gestão de serviços de TI.</p></div>
-    </div>
-  </section>
-
-  <!-- MODAL -->
-  <div id="modal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <div id="modal-text"></div>
-    </div>
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="logo">
+    <img src="assets/images/logo-ascenty.png" alt="Logo Ascenty">
   </div>
+  <nav>
+    <a href="#empresa" data-i18n="navbar_empresa"></a>
+    <a href="#tecnologia" data-i18n="navbar_tecnologia"></a>
+    <a href="#seguranca" data-i18n="navbar_seguranca"></a>
+    <a href="#equipe" data-i18n="navbar_equipe"></a>
+    <a href="#politicas" data-i18n="navbar_politicas"></a>
+    <a href="#quiz" data-i18n="navbar_quiz"></a>
+  </nav>
 
- <!-- SEGURANÇA -->
-<section id="seguranca" class="section dark">
-  <h2>Segurança da Informação</h2>
-  <div class="cards">
+  <!-- Seletor de idioma -->
+  <div class="lang-switcher">
+    <select id="langSwitcher">
+      <option value="pt">🇧🇷 PT</option>
+      <option value="en">🇺🇸 EN</option>
+      <option value="es">🇲🇽 ES</option>
+    </select>
+  </div>
+</header>
 
-    <!-- MFA -->
-    <div class="card" onclick="toggleExpand('mfa')">
-      <h3>🔐 MFA</h3>
-      <p>Autenticação multifator.</p>
-    </div>
-    <div id="mfa" class="expand">
-      <h4>O que é</h4>
-      <p>O MFA adiciona uma camada extra de segurança ao login. Além da senha, o usuário precisa confirmar sua identidade com outro fator — como um código no celular, aplicativo autenticador ou biometria.</p>
-      <h4>Por que é necessário</h4>
-      <ul>
-        <li>Senhas podem ser descobertas ou vazadas.</li>
-        <li>O MFA impede acessos indevidos mesmo que alguém saiba sua senha.</li>
-        <li>Protege e-mails, arquivos e sistemas corporativos.</li>
-      </ul>
-      <p><strong>Impacto:</strong> É como ter uma segunda fechadura na porta da sua casa — mesmo que alguém tenha a chave, não entra sem o código do alarme.</p>
-    </div>
-
-    <!-- Ferramentas de Segurança -->
-    <div class="card" onclick="toggleExpand('ferramentas')">
-      <h3>🛡️ Ferramentas de Segurança</h3>
-      <p>Proteção e monitoramento contínuos.</p>
-    </div>
-    <div id="ferramentas" class="expand">
-      <h4>O que é</h4>
-      <p>Conjunto de soluções que atuam na defesa digital, detectando e bloqueando ameaças em tempo real.</p>
-      <h4>Por que é necessário</h4>
-      <ul>
-        <li><strong>SentinelOne:</strong> Bloqueia ataques com inteligência artificial.</li>
-        <li><strong>Rapid7:</strong> Identifica vulnerabilidades e ajuda a corrigi-las.</li>
-        <li><strong>NinjaOne:</strong> Monitora dispositivos e garante atualizações.</li>
-        <li><strong>Zscaler:</strong> Protege acessos e tráfego com modelo Zero Trust.</li>
-      </ul>
-      <p><strong>Impacto:</strong> Essas ferramentas trabalham nos bastidores para manter os sistemas seguros e confiáveis.</p>
-    </div>
-
-    <!-- BitLocker -->
-    <div class="card" onclick="toggleExpand('bitlocker')">
-      <h3>💻 BitLocker</h3>
-      <p>Criptografia de dispositivos.</p>
-    </div>
-    <div id="bitlocker" class="expand">
-      <h4>O que é</h4>
-      <p>Ferramenta nativa do Windows que criptografa o disco rígido do computador, tornando os dados ilegíveis sem a chave correta.</p>
-      <h4>Por que é necessário</h4>
-      <ul>
-        <li>Protege informações em caso de perda ou roubo de notebooks.</li>
-        <li>Garante conformidade com normas de segurança e privacidade.</li>
-        <li>Evita que dados corporativos sejam acessados indevidamente.</li>
-      </ul>
-      <p><strong>Impacto:</strong> Se você esquecer seu notebook em um táxi, com BitLocker os dados ficam criptografados e inacessíveis — mesmo que o disco seja removido.</p>
-    </div>
-
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <img src="assets/images/datacenter.png" alt="Datacenter Ascenty" class="hero-image">
+    <h1 data-i18n="hero_title"></h1>
+    <p data-i18n="hero_subtitle"></p>
+    <a href="#empresa" class="btn" data-i18n="hero_button"></a>
   </div>
 </section>
 
- <!-- KnowBe4 Treinamentos -->
+
+  <!-- EMPRESA -->
+<section id="empresa" class="section">
+  <h2 data-i18n="empresa_title"></h2>
+  <div class="cards">
+    <a href="https://ascenty1.sharepoint.com/sites/Ascenty2/SitePages/Nossa-Historia.aspx" class="card" target="_blank">
+      <h3>🏢 <span data-i18n="empresa_historia_title"></span></h3>
+      <p data-i18n="empresa_historia_text"></p>
+    </a>
+    <a href="https://ascenty1.sharepoint.com/sites/Ascenty2/SitePages/Proposito-e-Missao.aspx" class="card" target="_blank">
+      <h3>🎯 <span data-i18n="empresa_proposito_title"></span></h3>
+      <p data-i18n="empresa_proposito_text"></p>
+    </a>
+    <a href="https://ascenty1.sharepoint.com/sites/Ascenty2/SitePages/Nossos-Valores.aspx" class="card" target="_blank">
+      <h3>💙 <span data-i18n="empresa_valores_title"></span></h3>
+      <p data-i18n="empresa_valores_text"></p>
+    </a>
+  </div>
+</section>
+
+<!-- NÚMEROS -->
+<section class="numbers">
+  <h2 data-i18n="numeros_title"></h2>
+  <div class="numbers-grid">
+    <div>
+      <span class="counter" data-target="28">0</span>
+      <p data-i18n="numeros_datacenters"></p>
+    </div>
+    <div>
+      <span class="counter" data-target="1100">0</span>
+      <p data-i18n="numeros_colaboradores"></p>
+    </div>
+    <div>
+      <span class="counter" data-target="750">0</span>
+      <p data-i18n="numeros_clientes"></p>
+    </div>
+  </div>
+</section>
+
+<!-- TECNOLOGIAS -->
+<section id="tecnologia" class="section">
+  <h2 data-i18n="tecnologia_title"></h2>
+  <div class="cards">
+    <div class="card" onclick="openModal('azure')">
+      <h3>☁️ <span data-i18n="tecnologia_azure_title"></span></h3>
+    </div>
+    <div class="card" onclick="openModal('vmware')">
+      <h3>🖥️ <span data-i18n="tecnologia_vmware_title"></span></h3>
+    </div>
+    <div class="card" onclick="openModal('firewall')">
+      <h3>🛡️ <span data-i18n="tecnologia_firewall_title"></span></h3>
+    </div>
+    <div class="card" onclick="openModal('servicenow')">
+      <h3>🎫 <span data-i18n="tecnologia_servicenow_title"></span></h3>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <button class="close" onclick="closeModal()" aria-label="Fechar modal">&times;</button>
+    <div id="modal-text" class="modal-body"></div>
+  </div>
+</div>
+
+
+<!-- SEGURANÇA -->
+<section id="seguranca" class="section dark">
+  <h2 data-i18n="seguranca_title"></h2>
+  <div class="cards">
+
+    <!-- MFA -->
+<div class="card" onclick="toggleExpand('mfa')">
+  <h3>🔐 <span data-i18n="mfa_title"></span></h3>
+  <p data-i18n="mfa_desc"></p>
+</div>
+<div id="mfa" class="expand">
+  <h4 data-i18n="mfa_what"></h4>
+  <p data-i18n="mfa_what_text"></p>
+  <h4 data-i18n="mfa_why"></h4>
+  <ul>
+    <li data-i18n="mfa_point1"></li>
+    <li data-i18n="mfa_point2"></li>
+    <li data-i18n="mfa_point3"></li>
+  </ul>
+  <p><strong data-i18n="impact_label"></strong> <span data-i18n="mfa_impact"></span></p>
+</div>
+
+<!-- Ferramentas de Segurança -->
+<div class="card" onclick="toggleExpand('ferramentas')">
+  <h3>🛡️ <span data-i18n="ferramentas_title"></span></h3>
+  <p data-i18n="ferramentas_desc"></p>
+</div>
+<div id="ferramentas" class="expand">
+  <h4 data-i18n="ferramentas_what"></h4>
+  <p data-i18n="ferramentas_what_text"></p>
+  <h4 data-i18n="ferramentas_why"></h4>
+  <ul>
+    <li><strong>SentinelOne:</strong> <span data-i18n="ferramentas_point1"></span></li>
+    <li><strong>Rapid7:</strong> <span data-i18n="ferramentas_point2"></span></li>
+    <li><strong>NinjaOne:</strong> <span data-i18n="ferramentas_point3"></span></li>
+    <li><strong>Zscaler:</strong> <span data-i18n="ferramentas_point4"></span></li>
+  </ul>
+  <p><strong data-i18n="impact_label"></strong> <span data-i18n="ferramentas_impact"></span></p>
+</div>
+
+<!-- BitLocker -->
+<div class="card" onclick="toggleExpand('bitlocker')">
+  <h3>💻 <span data-i18n="bitlocker_title"></span></h3>
+  <p data-i18n="bitlocker_desc"></p>
+</div>
+<div id="bitlocker" class="expand">
+  <h4 data-i18n="bitlocker_what"></h4>
+  <p data-i18n="bitlocker_what_text"></p>
+  <h4 data-i18n="bitlocker_why"></h4>
+  <ul>
+    <li data-i18n="bitlocker_point1"></li>
+    <li data-i18n="bitlocker_point2"></li>
+    <li data-i18n="bitlocker_point3"></li>
+  </ul>
+  <p><strong data-i18n="impact_label"></strong> <span data-i18n="bitlocker_impact"></span></p>
+</div>
+
+</div>
+</section>
+
+<!-- KnowBe4 Treinamentos -->
 <div class="knowbe4-container">
   <div class="card knowbe4" onclick="toggleExpand('knowbe4')">
-    <h3>🎓 KnowBe4</h3>
-    <p>Treinamentos de Phishing e Conscientização.</p>
+    <h3>🎓 <span data-i18n="knowbe4_title"></span></h3>
+    <p data-i18n="knowbe4_desc"></p>
   </div>
   <div id="knowbe4" class="expand">
-    <h4>O que é</h4>
-    <p>Plataforma de treinamentos focada em segurança digital e prevenção de ataques de engenharia social.</p>
-    <h4>Por que é necessário</h4>
+    <h4 data-i18n="knowbe4_what"></h4>
+    <p data-i18n="knowbe4_what_text"></p>
+    <h4 data-i18n="knowbe4_why"></h4>
     <ul>
-      <li>Simulações de phishing para treinar colaboradores.</li>
-      <li>Conteúdos educativos sobre boas práticas digitais.</li>
-      <li>Redução de riscos de malwares e vazamento de dados.</li>
-      <li>Fortalecimento da cultura de segurança corporativa.</li>
+      <li data-i18n="knowbe4_point1"></li>
+      <li data-i18n="knowbe4_point2"></li>
+      <li data-i18n="knowbe4_point3"></li>
+      <li data-i18n="knowbe4_point4"></li>
     </ul>
-    <p><strong>Impacto:</strong> Ajuda os colaboradores a reconhecer e evitar golpes digitais, tornando a empresa mais resiliente contra ataques.</p>
+    <p><strong data-i18n="impact_label"></strong> <span data-i18n="knowbe4_impact"></span></p>
     <div class="knowbe4-button">
-      <a href="https://training.knowbe4.com/app/login" target="_blank" rel="noopener noreferrer">Clique aqui para verificar os cursos</a>
+      <a href="https://training.knowbe4.com/app/login" target="_blank" rel="noopener noreferrer" data-i18n="knowbe4_button"></a>
     </div>
   </div>
 </div>
 
   <!-- EQUIPE -->
-  <section id="equipe" class="section">
-    <h2>Equipe de Suporte Interno TI</h2>
-    <div class="cards">
-      <div class="card"><h3>Renato Richard de Souza</h3><p>Coordenação de TI</p></div>
-      <div class="card"><h3>Gabriel Duarte Silva</h3><p>Estagiário de Suporte Interno</p></div>
-      <div class="card"><h3>Eric de Souza Delpasso</h3><p>Analista de Suporte Interno</p></div>
-      <div class="card"><h3>Rafael Claro Riekmann Laise</h3><p>Analista de Suporte Interno</p></div>
-    </div>
-  </section>
+<section id="equipe" class="section">
+  <h2 data-i18n="equipe_suporte_title"></h2>
+  <div class="cards">
+    <div class="card"><h3 data-i18n="equipe_renato_nome"></h3><p data-i18n="equipe_renato_funcao"></p></div>
+    <div class="card"><h3 data-i18n="equipe_gabriel_nome"></h3><p data-i18n="equipe_gabriel_funcao"></p></div>
+    <div class="card"><h3 data-i18n="equipe_eric_nome"></h3><p data-i18n="equipe_eric_funcao"></p></div>
+    <div class="card"><h3 data-i18n="equipe_rafael_nome"></h3><p data-i18n="equipe_rafael_funcao"></p></div>
+  </div>
+</section>
 
-  <section id="infra" class="section">
-    <h2>Equipe de Infraestrutura e Segurança TI</h2>
-    <div class="cards">
-      <div class="card"><h3>Rui Mella Junior</h3><p>Gerente de Segurança e Infraestrutura TI</p></div>
-      <div class="card"><h3>Diego Botini Lima</h3><p>Analista de Infraestrutura TI</p></div>
-      <div class="card"><h3>Gustavo Adorno de Moraes</h3><p>Engenheiro de Segurança da Informação TI</p></div>
-      <div class="card"><h3>Daniel Cano</h3><p>Especialista de Segurança da Informação TI</p></div>
-    </div>
-  </section>
+<section id="infra" class="section">
+  <h2 data-i18n="equipe_infra_title"></h2>
+  <div class="cards">
+    <div class="card"><h3 data-i18n="infra_rui_nome"></h3><p data-i18n="infra_rui_funcao"></p></div>
+    <div class="card"><h3 data-i18n="infra_diego_nome"></h3><p data-i18n="infra_diego_funcao"></p></div>
+    <div class="card"><h3 data-i18n="infra_gustavo_nome"></h3><p data-i18n="infra_gustavo_funcao"></p></div>
+    <div class="card"><h3 data-i18n="infra_daniel_nome"></h3><p data-i18n="infra_daniel_funcao"></p></div>
+  </div>
+</section>
 
-  <!-- POLÍTICAS DE TI -->
+<!-- POLÍTICAS DE TI -->
 <section id="politicas" class="section dark">
-  <h2>Políticas do Departamento de TI</h2>
+  <h2 data-i18n="politicas_title"></h2>
 
   <div class="cards destaque">
     <a href="https://ascenty1.sharepoint.com/sites/Ascenty2/SitePages/Tecnologia_da_Informacao.aspx" 
        class="card" target="_blank" rel="noopener noreferrer">
-      <h3>📑 Portal de Políticas</h3>
-      <p>Acesse todas as políticas, procedimentos e normas de TI.</p>
+      <h3>📑 <span data-i18n="politicas_portal_title"></span></h3>
+      <p data-i18n="politicas_portal_text"></p>
     </a>
   </div>
 
   <div class="cards politicas-grid">
     <!-- Uso de Notebooks -->
     <div class="card" onclick="toggleExpand('politica-notebook')">
-      <h3>💻 Uso de Notebooks</h3>
-      <p>Diretrizes para utilização segura.</p>
+      <h3>💻 <span data-i18n="politica_notebook_title"></span></h3>
+      <p data-i18n="politica_notebook_desc"></p>
     </div>
     <div id="politica-notebook" class="expand">
-      <h4>O que é</h4>
-      <p>Conjunto de regras para uso adequado e seguro dos notebooks corporativos.</p>
-      <h4>Por que é necessário</h4>
+      <h4 data-i18n="politica_notebook_what"></h4>
+      <p data-i18n="politica_notebook_what_text"></p>
+      <h4 data-i18n="politica_notebook_why"></h4>
       <ul>
-        <li>Garantir integridade física e lógica dos equipamentos.</li>
-        <li>Proteger informações corporativas contra acessos indevidos.</li>
-        <li>Definir responsabilidades em caso de perda ou roubo.</li>
+        <li data-i18n="politica_notebook_point1"></li>
+        <li data-i18n="politica_notebook_point2"></li>
+        <li data-i18n="politica_notebook_point3"></li>
       </ul>
-      <p><strong>Impacto:</strong> Evita problemas de segurança e garante que os notebooks sejam usados de forma profissional e responsável.</p>
+      <p><strong data-i18n="impact_label"></strong> <span data-i18n="politica_notebook_impact"></span></p>
     </div>
 
     <!-- Correio Eletrônico e Internet -->
     <div class="card" onclick="toggleExpand('politica-email-internet')">
-      <h3>📧 Correio Eletrônico & Internet</h3>
-      <p>Diretrizes para uso corporativo.</p>
+      <h3>📧 <span data-i18n="politica_email_title"></span></h3>
+      <p data-i18n="politica_email_desc"></p>
     </div>
     <div id="politica-email-internet" class="expand">
-      <h4>O que é</h4>
-      <p>Política que regula o uso do e-mail corporativo e da internet pelos colaboradores.</p>
-      <h4>Por que é necessário</h4>
+      <h4 data-i18n="politica_email_what"></h4>
+      <p data-i18n="politica_email_what_text"></p>
+      <h4 data-i18n="politica_email_why"></h4>
       <ul>
-        <li>Evitar uso indevido de recursos corporativos.</li>
-        <li>Garantir comunicação ética e profissional.</li>
-        <li>Proteger contra vazamento de informações e ataques digitais.</li>
+        <li data-i18n="politica_email_point1"></li>
+        <li data-i18n="politica_email_point2"></li>
+        <li data-i18n="politica_email_point3"></li>
       </ul>
-      <p><strong>Impacto:</strong> Mantém a rede corporativa segura e garante que os recursos sejam usados apenas para fins profissionais.</p>
+      <p><strong data-i18n="impact_label"></strong> <span data-i18n="politica_email_impact"></span></p>
     </div>
 
     <!-- Privacidade de Dados -->
     <div class="card" onclick="toggleExpand('politica-privacidade')">
-      <h3>🔒 Privacidade de Dados</h3>
-      <p>Proteção e tratamento de informações pessoais.</p>
+      <h3>🔒 <span data-i18n="politica_privacidade_title"></span></h3>
+      <p data-i18n="politica_privacidade_desc"></p>
     </div>
     <div id="politica-privacidade" class="expand">
-      <h4>O que é</h4>
-      <p>Política baseada na LGPD que define como os dados pessoais devem ser coletados, tratados e protegidos.</p>
-      <h4>Por que é necessário</h4>
+      <h4 data-i18n="politica_privacidade_what"></h4>
+      <p data-i18n="politica_privacidade_what_text"></p>
+      <h4 data-i18n="politica_privacidade_why"></h4>
       <ul>
-        <li>Garantir conformidade com a legislação de proteção de dados.</li>
-        <li>Proteger informações de colaboradores, clientes e terceiros.</li>
-        <li>Definir responsabilidades em caso de incidentes.</li>
+        <li data-i18n="politica_privacidade_point1"></li>
+        <li data-i18n="politica_privacidade_point2"></li>
+        <li data-i18n="politica_privacidade_point3"></li>
       </ul>
-      <p><strong>Impacto:</strong> Reforça a confiança dos clientes e colaboradores, além de evitar sanções legais e danos à reputação da empresa.</p>
+      <p><strong data-i18n="impact_label"></strong> <span data-i18n="politica_privacidade_impact"></span></p>
     </div>
   </div>
 </section>
 
-
   <!-- QUIZ -->
-  <section id="quiz" class="quiz-section locked">
-    <h2>Teste seu conhecimento!</h2>
-    <p class="quiz-warning">⚠️ Explore os conteúdos obrigatórios antes de iniciar o quiz.</p>
-    <button id="startQuiz" class="quiz-btn" disabled>Iniciar Quiz</button>
-    <div id="quizBox" class="quiz-box hidden">
-      <div id="question"></div>
-      <div id="options"></div>
-      <button id="nextBtn" class="next-btn">Próxima Pergunta</button>
-    </div>
-  </section>
+<section id="quiz" class="quiz-section locked">
+  <h2 data-i18n="quiz_title"></h2>
+  <p class="quiz-warning" data-i18n="quiz_warning"></p>
+  <button id="startQuiz" class="quiz-btn" disabled data-i18n="quiz_button"></button>
+  <div id="quizBox" class="quiz-box hidden">
+    <div id="question" data-i18n="quiz_question"></div>
+    <div id="options"></div>
+    <button id="nextBtn" class="next-btn" data-i18n="quiz_next"></button>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer>
-    <h2>Seja Bem-vindo à Equipe!</h2>
-    <p>Estamos felizes por fazer parte da sua jornada. Conte sempre com a equipe de TI.</p>
-  </footer>
+<!-- FOOTER -->
+<footer>
+  <h2 data-i18n="footer_title"></h2>
+  <p data-i18n="footer_text"></p>
+</footer>
 
-  <!-- JS -->
-  <script src="js/script.js"></script>
+<!-- JS -->
+<script src="js/script.js"></script>
 </body>
 </html>

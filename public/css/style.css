@@ -235,3 +235,12 @@ footer p { color:#f9fafb; font-size:0.9rem; }
   transform: translateY(-8px);
   box-shadow: 0 10px 25px rgba(250, 204, 21, 0.4);
 }
+
+/* Ajuste para notebooks e telas médias */
+@media(max-width: 1366px) {
+  .hero h1 { font-size: 3rem; }
+  .hero p { font-size: 1.1rem; }
+  .section { padding: 60px 40px; }
+  .cards { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+  .navbar { padding: 15px 30px; }
+}

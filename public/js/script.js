@@ -67,38 +67,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // ----------------------
-  // Modais interativos
-  // ----------------------
-  window.openModal = function(tech) {
-    const modal = document.getElementById("modal");
-    const text = document.getElementById("modal-text");
-    if (!modal || !text) return;
+ // ----------------------
+// Modais interativos
+// ----------------------
+window.openModal = function(tech) {
+  const modal = document.getElementById("modal");
+  const text = document.getElementById("modal-text");
+  if (!modal || !text) return;
 
-    let content = "";
-    switch(tech) {
-      case "azure": content = "<h2>Azure</h2><p>Hospeda serviços em nuvem com segurança e escalabilidade.</p>"; break;
-      case "vmware": content = "<h2>VMware</h2><p>Virtualização de servidores e aplicações.</p>"; break;
-      case "firewall": content = "<h2>Firewall & IDS/IPS</h2><p>Proteção da rede corporativa contra ataques.</p>"; break;
-      case "servicenow": content = "<h2>ServiceNow</h2><p>Gestão de serviços de TI e automação de processos.</p>"; break;
-    }
+  // monta as chaves de tradução dinamicamente
+  const titleKey = `tecnologia_${tech}_title`;
+  const textKey = `tecnologia_${tech}_text`;
 
-    text.innerHTML = content;
-    modal.style.display = "flex";
-    markClicked(tech);
-  };
+  let content = "";
+  if (translations[currentLang]) {
+    const title = translations[currentLang][titleKey] || "";
+    const body = translations[currentLang][textKey] || "";
+    content = `<h2>${title}</h2><p>${body}</p>`;
+  }
 
-  window.closeModal = function() {
-    const modal = document.getElementById("modal");
-    if (modal) modal.style.display = "none";
-  };
+  text.innerHTML = content;
+  modal.style.display = "flex";
+  markClicked(tech);
+};
 
-  window.addEventListener("click", (event) => {
-    const modal = document.getElementById("modal");
-    if (modal && event.target === modal) {
-      modal.style.display = "none";
-    }
-  });
+window.closeModal = function() {
+  const modal = document.getElementById("modal");
+  if (modal) modal.style.display = "none";
+};
+
+window.addEventListener("click", (event) => {
+  const modal = document.getElementById("modal");
+  if (modal && event.target === modal) {
+    modal.style.display = "none";
+  }
+});
+
 
   // ----------------------
   // Expansão dos Cards
@@ -225,3 +229,40 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// js/script.js
+
+let translations = {};
+let currentLang = "pt"; // padrão: português
+
+// Carrega o arquivo lang.json
+async function loadTranslations() {
+  try {
+    const response = await fetch("js/lang.json");
+    translations = await response.json();
+    applyTranslations(currentLang); // aplica o idioma padrão
+  } catch (error) {
+    console.error("Erro ao carregar traduções:", error);
+  }
+}
+
+// Aplica as traduções no HTML
+function applyTranslations(lang) {
+  currentLang = lang;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const key = el.getAttribute("data-i18n");
+    if (translations[lang] && translations[lang][key]) {
+      el.textContent = translations[lang][key];
+    } else {
+      el.textContent = ""; // limpa se não achar tradução
+    }
+  });
+}
+
+// Listener para troca de idioma
+document.getElementById("langSwitcher").addEventListener("change", (e) => {
+  applyTranslations(e.target.value);
+});
+
+// Inicializa ao carregar a página
+document.addEventListener("DOMContentLoaded", loadTranslations);
