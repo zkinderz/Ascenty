@@ -368,3 +368,8 @@ footer p {
     color: #000;
 }
 
+.logo img {
+  max-height: 50px;   /* controla altura da logo */
+  width: auto;        /* mantém proporção */
+  display: block;
+}
